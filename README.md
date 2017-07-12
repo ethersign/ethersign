@@ -4,7 +4,7 @@
 
 http://ethersign.github.io
 
-Ethersign is a javascript package and offline app that allows any user to prove to any other user or website that they know the Ethereum Private Key for any particular Ethereum Address.  This is done using the same cryptographic signatures used by miners to initiate transactions.  There are three steps:
+Ethersign is a javascript package and offline app that allows any user to prove to any other user or website that they know the Ethereum Private Key for any particular Ethereum Address.  This is done using the same cryptographic signatures used by wallets to initiate transactions (elliptic curve cryptography).  There are three steps:
 
     a. The service generates a secure-random cryptographic challenge which is given to the client. (generateEllipticCurveChallengeDigest)
 
