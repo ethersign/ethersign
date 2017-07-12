@@ -64,7 +64,7 @@ This is meant to only be accomplished by the client offline so there is a page a
 
 **Example Use**
 
-var signature_hex = ethersign.signEllipticCurveChallenge(test_eth_private_key,challenge_digest)
+var signature_hex = ethersign.signEllipticCurveChallenge(private_key,challenge_digest)
 
 
 **Example Result**
@@ -115,7 +115,7 @@ Uses the challenge digest and signature from the client in order to derive the P
 
 
 
-
+---
 
 
 
