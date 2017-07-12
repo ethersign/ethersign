@@ -24,9 +24,96 @@ This is really just a nice wrapper for the library ethereumjs-util: https://gith
 **In a terminal**
 npm install ether-sign
 
+
+
+
 ```
 var ethersign = require('ether-sign')
 ```
+
+
+```
+function generateEllipticCurveChallengeDigest(_optional_challenge_message)
+```
+**Description**
+
+Generates a cryptographic challenge using your own random message.  If no parameter is passed, this will generate a random 32 bit string using the 'crypto' library.
+
+**Example Use**
+
+var challenge_digest = ethersign.generateEllipticCurveChallengeDigest('test');
+var challenge_digest_hex = challenge_digest.toString('hex')
+
+
+**Example Result**
+
+ *4a5c5d454721bbbb25540c3317521e71c373ae36458f960d2ad46ef088110e95*
+
+
+
+```
+function signEllipticCurveChallenge(_private_key,_challenge_digest)
+```
+
+**Description**
+
+This is meant to only be accomplished by the client offline so there is a page at http://ethersign.github.io for this purpose.  
+
+**Example Use**
+
+var signature_hex = ethersign.signEllipticCurveChallenge(test_eth_private_key,challenge_digest)
+
+
+**Example Result**
+
+ *0x041a261a9988d60cc59347c217ac32268b4491fd90b7d367b5392d7b20dd63fc1d10c56dae8666e9a860719d6d4772af6f5ead8ce1f9150a461b5b618a3e5ea300*
+
+
+ ```
+ function validateEllipticCurveSignature(_public_address,_challenge_digest,_signature_response_hex)
+ ```
+
+ **Description**
+
+Uses the challenge digest and signature from the client in order to derive the Public Key.  This is the Public Key of the account that the client signed with.  Then, the Public Key is converted to a Public Address and checked against _public_address.  If it is a match, the signature is valid for that account.  The client must know the private key.
+
+ **Example Use**
+
+ var result = ethersign.validateEllipticCurveSignature(_eth_public_address,challenge_digest,_s_signature_hex)
+
+
+ **Example Result**
+
+  *{valid: true, pub_addr: '0xacbFBdc72626c2264a72a352733ae58244ee3BEf'}*
+
+
+
+  ```
+  function getPublicKeyFromEllipticCurveSignature(_challenge_digest,_signature_response_hex)
+  ```
+
+  **Description**
+
+  This is not necessary since it is a sub-function of 'validateEllipticCurveSignature' but it will return the Public Key of the client's account when given the challenge digest and signature from the client.  
+
+  **Example Use**
+
+  var public_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge_digest,signature_hex);
+  
+  var pub_key_from_sig_hex = pub_key_from_sig.toString('hex');
+
+
+  **Example Result**
+
+   *6d997bb8b96f69c216d15037fd7d2f7890df5c70c5dc9bced6e3deeacd435954d8d1911cad86df60cfda23573329af383bc81e37cff8133d815e2922a0a30706*
+
+
+
+
+
+
+
+
 
 
 ### Signing the Proof-Of-Key Challenges
