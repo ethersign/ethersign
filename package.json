@@ -1,0 +1,31 @@
+{
+  "name": "ether-sign",
+  "version": "0.1.0",
+  "description": "A module to assist with generation and validation of cryptographic signatures related to Ethereum",
+  "main": "app/ether-sign.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethersign/Ethersign.git"
+  },
+  "keywords": [
+    "ethereum",
+    "sign",
+    "crypto"
+  ],
+  "author": "ethersign",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethersign/Ethersign/issues"
+  },
+  "homepage": "https://github.com/ethersign/Ethersign#readme",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "ethereumjs-util": "^5.1.2",
+    "ethjs-provider-http": "^0.1.6",
+    "ethjs-query": "^0.2.6",
+    "mocha": "^3.4.2"
+  }
+}
