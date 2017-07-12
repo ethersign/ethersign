@@ -1,10 +1,10 @@
 
 
-# Ether-sign
+# Ethersign
 
 http://ethersign.github.io
 
-Ether-sign is a javascript package and offline app that allows any user to prove to any other user or website that they know the Ethereum Private Key for any particular Ethereum Address.  This is done using the same cryptographic signatures used by miners to initiate transactions.  There are three steps:
+Ethersign is a javascript package and offline app that allows any user to prove to any other user or website that they know the Ethereum Private Key for any particular Ethereum Address.  This is done using the same cryptographic signatures used by miners to initiate transactions.  There are three steps:
 
     a. The service generates a secure-random cryptographic challenge which is given to the client. (generateEllipticCurveChallengeDigest)
 
@@ -19,6 +19,7 @@ As an example use case, using these three tools, it is possible to build a webfo
 
 ### How to Use
 
+**In a terminal**
 npm install ether-sign
 
 ```
