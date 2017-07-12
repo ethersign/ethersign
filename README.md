@@ -17,6 +17,8 @@ Now the service knows that the client owns the private key for that public addre
 
 As an example use case, using these three tools, it is possible to build a webform  that asks a user for a public address, asks them to sign a challenge to prove ownership, and then records the fact that they must know the private key.  This is useful for tying their account identity to smartcontracts on the blockchain.
 
+This is really just a nice wrapper for the library https://github.com/ethereumjs/ethereumjs-util
+
 ### How to Use
 
 **In a terminal**
