@@ -34,3 +34,25 @@ Visit http://ethersign.github.io in order to sign these cryptographic challenges
 ### Testing with Mocha
 
 npm test
+
+
+## Sample Use case
+A client named "ETHan" owns a Cryptopunk icon and wants to use it as their avatar on Github.com.  This cryptopunk is owned by Public Key 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
+
+1. The user fills out a form on Github stating that his public key is 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
+
+2. Github generates a Cryptographic Challenge with Ethersign using the message 'test' which results in the following which is shown to ETHan.  
+
+Cryptographic Challenge:
+
+4a5c5d454721bbbb25540c3317521e71c373ae36458f960d2ad46ef088110e95
+
+3.  ETHan visits ethersign.github.io on a secure device and disconnects from the internet.  He pastes in the challenge and his private key which is 2c6036ab2f51cb1bfa17a3ffb57abf93a183d9d3887bc9e73cd28d9be57e4d56.  This results in a signature.  
+
+Signature Response:
+
+0x041a261a9988d60cc59347c217ac32268b4491fd90b7d367b5392d7b20dd63fc1d10c56dae8666e9a860719d6d4772af6f5ead8ce1f9150a461b5b618a3e5ea300
+
+4.  ETHan gives Github this signature and they use Ethersign to validate it against the Public Key and the Challenge.  Github noticed that it came back valid so they add a new record in their database stating that ETHan does indeed control the account at Public Key 0xacbFBdc72626c2264a72a352733ae58244ee3BEf and his avatar is now one of the Cryptopunks at that address.
+
+5. At no time did ETHan expose his private key on the internet, but now Github knows that he is the owner of the account.
