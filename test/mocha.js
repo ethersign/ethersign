@@ -65,6 +65,18 @@ describe("Ether-sign", function() {
 
         });
 
+        it("signs a hex challenge", function() {
+
+          var challenge_digest = ethersign.generateEllipticCurveChallengeDigest('test')
+
+          var sig_hex = ethersign.signEllipticCurveChallenge(test_eth_private_key,challenge_digest.toString('hex'))
+
+
+          expect(sig_hex).to.equal('0x041a261a9988d60cc59347c217ac32268b4491fd90b7d367b5392d7b20dd63fc1d10c56dae8666e9a860719d6d4772af6f5ead8ce1f9150a461b5b618a3e5ea300');
+
+
+        });
+
         it("finds pub key from signature", function() {
 
           var challenge_digest = ethersign.generateEllipticCurveChallengeDigest('test')

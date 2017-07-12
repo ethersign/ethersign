@@ -50,9 +50,18 @@ var eth_utils = require('ethereumjs-util');
 	 	exports.signEllipticCurveChallenge = function (_eth_private_key,_challenge_digest)
 		{
 
-			private_key_buffer =  Buffer.from(_eth_private_key,'hex')
+			if(typeof _challenge_digest != 'buffer')
+			{
+				_challenge_digest = Buffer.from(_challenge_digest,'hex')
+			}
 
-			var sig = eth_utils.ecsign(_challenge_digest,private_key_buffer)
+			if(typeof _eth_private_key != 'buffer')
+			{
+				_eth_private_key = Buffer.from(_eth_private_key,'hex')
+			}
+
+
+			var sig = eth_utils.ecsign(_challenge_digest,_eth_private_key)
 
 			var rpc_format_sig = eth_utils.toRpcSig(sig.v,sig.r,sig.s)
 
