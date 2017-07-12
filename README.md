@@ -41,7 +41,7 @@ npm test
 ## Sample Use case
 A client named "ETHan" owns a Cryptopunk icon and wants to use it as his avatar on Github.com.  This cryptopunk is stored at Public Address 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
 
-1. TETHan fills out a form on Github stating that his public address is 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
+1. ETHan fills out a form on Github stating that his public address is 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
 
 2. Github doesn't believe him so it generates a Cryptographic Challenge with Ethersign using the message 'test' which results in the following which is shown to ETHan.  
 
