@@ -37,11 +37,11 @@ npm test
 
 
 ## Sample Use case
-A client named "ETHan" owns a Cryptopunk icon and wants to use it as their avatar on Github.com.  This cryptopunk is owned by Public Key 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
+A client named "ETHan" owns a Cryptopunk icon and wants to use it as his avatar on Github.com.  This cryptopunk is stored at Public Key 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
 
-1. The user fills out a form on Github stating that his public key is 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
+1. TETHan fills out a form on Github stating that his public key is 0xacbFBdc72626c2264a72a352733ae58244ee3BEf.  
 
-2. Github generates a Cryptographic Challenge with Ethersign using the message 'test' which results in the following which is shown to ETHan.  
+2. Github doesn't believe him so it generates a Cryptographic Challenge with Ethersign using the message 'test' which results in the following which is shown to ETHan.  
 
 Cryptographic Challenge:
 
@@ -55,4 +55,4 @@ Signature Response:
 
 4.  ETHan gives Github this signature and they use Ethersign to validate it against the Public Key and the Challenge.  Github noticed that it came back valid so they add a new record in their database stating that ETHan does indeed control the account at Public Key 0xacbFBdc72626c2264a72a352733ae58244ee3BEf and his avatar is now one of the Cryptopunks at that address.
 
-5. At no time did ETHan expose his private key on the internet, but now Github knows that he is the owner of the account.
+5. At no time did ETHan expose his private key on the internet, but now Github knows that he is the owner of the account.  Ethersign is not a service or a company, it is not in the cloud, it is just a small set of cryptographic math functions.  
