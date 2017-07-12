@@ -64,6 +64,10 @@ var eth_utils = require('ethereumjs-util');
 		exports.getPublicKeyFromEllipticCurveSignature = function (_challenge_digest,_signature_response_hex)
 		{
 
+			if(typeof _challenge_digest != 'buffer')
+			{
+				_challenge_digest = Buffer.from(_challenge_digest,'hex')
+			}
 
 			var vrs_data = eth_utils.fromRpcSig(_signature_response_hex)
 
@@ -104,6 +108,3 @@ var eth_utils = require('ethereumjs-util');
 
 			return (address_at_pub_key_hex.toLowerCase() === _eth_pub_addr.toLowerCase())
 		}
-
-
-	 
