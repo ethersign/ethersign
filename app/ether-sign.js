@@ -31,9 +31,7 @@ var eth_utils = require('ethereumjs-util');
 
 			if(typeof _secure_random_message == 'undefined')
 			{
-				var len = 32;
-
-				_secure_random_message = crypto.randomBytes(Math.ceil(len / 2)).toString('hex').slice(0, len);
+					_secure_random_message = crypto.randomBytes(40).toString('hex').slice(0, len);
 			}
 
 			random_message_buffer = Buffer.from(_secure_random_message.toString())

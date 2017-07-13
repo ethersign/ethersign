@@ -163,3 +163,8 @@ Signature Response:
 ```
 At no time did ETHan expose his private key on the internet, but now Github knows that he is the owner of the account.  Ethersign is not a service or a company, it is not in the cloud, it is just a small set of cryptographic math functions.
 ```
+
+
+
+## TODO: Implement eth-sig-util
+https://github.com/MetaMask/eth-sig-util
